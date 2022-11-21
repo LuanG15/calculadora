@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="">
+    <title>Calculadora</title>
+</head>
+<body>
+     <input type="text" id="num1" size="2"><br>
+     <input type="text" id="num2" size="2"><br>
+     <input type="radio" name="opt" value="+">+
+     <input type="radio" name="opt" value="-">-
+     <input type="radio" name="opt" value="*">*
+     <input type="radio" name="opt" value="/">/
+     <br>
+     <button onclick="Calculadora()">=</button>
+
+     <h3>Resultado:</h3>
+        <p id="mostrar-resultado"></p>
+
+        <script>
+            
+            function Calculadora()
+            {
+                num1 = document.getElementById("num1").value
+                num2 = document.getElementById("num2").value
+
+                operador = document.querySelector("input[name=opt]:checked").value
+                resultado = eval(parseInt(num1)+ operador + parseInt(num2));
+
+                document.getElementById("mostrar-resultado").innerHTML = resultado;
+            }
+
+        </script>
+
+</body>
+</html>
